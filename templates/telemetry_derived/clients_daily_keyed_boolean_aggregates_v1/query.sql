@@ -50,8 +50,9 @@ flattened_metrics AS
     value.key AS key,
     value.value AS value
   FROM grouped_metrics
-  CROSS JOIN unnest(metrics) AS metrics,
+  CROSS JOIN UNNEST(metrics) AS metrics,
   UNNEST(metrics.value) AS value),
+
 
 aggregated AS (
   SELECT
